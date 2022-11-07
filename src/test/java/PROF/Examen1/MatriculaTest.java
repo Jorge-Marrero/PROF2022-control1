@@ -5,24 +5,22 @@ import static org.mockito.Mockito.*;
 
 import java.util.Vector;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-class MatriculaTest {
+public class MatriculaTest {
 	Matricula m2;
 	Matricula m3;
 	Asignatura a1 = mock(Asignatura.class);
 	Asignatura a2 = mock(Asignatura.class);
 	Asignatura a3 = mock(Asignatura.class);
 	
-	
 	@Test
-	void lanza_excepcion_cuando_vector_nulo() throws Exception {
+	public void lanza_excepcion_cuando_vector_nulo() throws Exception {
 		assertThrows(Exception.class, () -> new Matricula(null));
 	}
 	
 	@Test
-	void calcula_importe_matricula() throws Exception{
+	public void calcula_importe_matricula() throws Exception{
 		when(a1.getImporte()).thenReturn(100.0);
 		when(a2.getImporte()).thenReturn(350.5);
 		when(a3.getImporte()).thenReturn(240.2);
@@ -35,11 +33,11 @@ class MatriculaTest {
 	}
 	
 	@Test
-	void todas_asignaturas_recorridas() throws Exception{
+	public void todas_asignaturas_recorridas() throws Exception{
 		when(a1.getImporte()).thenReturn(100.0);
 		when(a2.getImporte()).thenReturn(350.5);
 		when(a3.getImporte()).thenReturn(240.2);
-		Vector<Asignatura> v2 = new Vector();
+		Vector<Asignatura> v2 = new Vector<Asignatura>();
 		v2.add(a1);
 		v2.add(a2);
 		v2.add(a3);
